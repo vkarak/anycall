@@ -10,6 +10,7 @@
 
 import imp
 import inspect
+import os.path
 import sys
 
 def load_module_recursive(name):
@@ -17,7 +18,7 @@ def load_module_recursive(name):
     Load module name recursively, descending to submodules if name contains dots.
     """
     module_names = name.split(".")
-    module_path = sys.path
+    module_path = sys.path.append(".")
     m_path = []
     for m_name in module_names:
         mod = imp.find_module(m_name, module_path)
