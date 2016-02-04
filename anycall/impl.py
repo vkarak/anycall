@@ -18,15 +18,16 @@ def load_module_recursive(name):
     Load module name recursively, descending to submodules if name contains dots.
     """
     module_names = name.split(".")
-    module_path = sys.path.append(".")
+    module_path = [ "." ] + sys.path
     m_path = []
     for m_name in module_names:
         mod = imp.find_module(m_name, module_path)
         imp.load_module(m_name, *mod)
-        m_path.append(m_name)
+        m_path.append(mod[1])
         module_path = m_path
 
     return module_names
+
 
 def convert_to_dict(list):
     """

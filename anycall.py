@@ -26,9 +26,9 @@ def list_ops(show_help='none'):
         doc = inspect.getdoc(v)
         if doc and show_help in ['short', 'full']:
             if show_help == 'short':
-                print '    %s' % doc.split('.')[0]
+                print('    %s' % doc.split('.')[0])
             else:
-                print '    %s' % doc
+                print('    %s' % doc)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
