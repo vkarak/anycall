@@ -6,4 +6,4 @@
 #
 
 def greetings(msg):
-    print 'Hello, %s!' % msg
+    print('Hello, %s!' % msg)

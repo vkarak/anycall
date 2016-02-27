@@ -20,7 +20,7 @@ def list_ops(show_help='none'):
     List available operations.
     """
     sys.stdout.write('Available operations:\n')
-    for k, v in AVAILABLE_OPS.iteritems():
+    for k, v in AVAILABLE_OPS.items():
         sys.stdout.write('=> %s%s\n' % (k, inspect.formatargspec(
                     inspect.getargspec(v)[0])))
         doc = inspect.getdoc(v)
